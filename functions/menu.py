@@ -12,10 +12,9 @@ def main_menu():
     [1] View/Edit People List
     [2] View/Edit Drink List
     [3] Order a Round of Drinks
-    [4] View Round
-    [5] Register Preferences
-    [6] View Preferences
-    [7] Save & Exit"""
+    [4] View Orders & Receipt
+    [5] View Preferences
+    [6] Save & Exit"""
     print(menu_text)
 
 def start_up():
