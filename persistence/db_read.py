@@ -1,5 +1,6 @@
 import sys
 sys.path.insert(0,"/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages")
+
 import pymysql
 
 def see_people ():
@@ -19,12 +20,11 @@ def see_people ():
 def see_drinks():
     connection = pymysql.connect("localhost", "root", "Chenyse2017!", "miniproject")
     cursor = connection.cursor()
-    cursor.execute("SELECT drink_id, drink_name, category, price FROM drinks")
+    cursor.execute("SELECT d.drink_id, d.drink_name, d.price, categories.cat_name FROM drinks as d LEFT JOIN categories ON d.category = categories.cat_id")
     rows = cursor.fetchall()
-    
     for row in rows:
         print("\t Drink ID: " + str(row[0]))
-        print("\t Drink Info: " + row[1] + ", " + row[2] + " @  £" +str(row[3]))
+        print("\t Drink Info: " + row[1] + " @ £" + str(row[2]) + "  (" + row[3] + ") " )
         print("\n")
         
     cursor.close
@@ -42,5 +42,3 @@ def see_all_preferences():
         
     cursor.close
     connection.close
-
-see_all_preferences()
