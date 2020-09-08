@@ -86,4 +86,3 @@ def create_order():
     
     cursor.close
     connection.close
-   
