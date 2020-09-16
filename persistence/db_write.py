@@ -10,9 +10,15 @@ def add_people ():
     p_first_name= input("Please enter your first name:   ")
     p_surname= input ("Please enter your surname:   ")
     p_age= int(input("Please enter your current age:   "))
+    drink_list= "SELECT drink_id, drink_name FROM drinks"
+    cursor.execute(drink_list)
+    rows = cursor.fetchall()
+    for row in rows:
+        print("\t " + str(row[0]) + ":  " + row[1])
+    p_fave_drink= int(input("Please enter the Unique ID for your favourite drink:   "))
     
-    sql = "INSERT INTO people (first_name, surname, age) VALUES (%s, %s, %s)"
-    cursor.execute(sql, (p_first_name, p_surname, p_age))
+    sql = "INSERT INTO people (first_name, surname, age, fave_drink) VALUES (%s, %s, %s, %s)"
+    cursor.execute(sql, (p_first_name, p_surname, p_age, p_fave_drink))
     
     connection.commit()
     print("Entry Added")
@@ -83,6 +89,8 @@ def create_order():
     cursor.execute(sql, (person, choice_1, choice_2, choice_3, choice_4))
     connection.commit()
     print("Order Recorded")
+    last_order = cursor.lastrowid
+    print (f"Please make note of your unique order number:  {last_order}")
     
     cursor.close
     connection.close

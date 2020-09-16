@@ -1,9 +1,9 @@
 from functions.menu import main_menu, start_up, clear_screen
+from persistence.db_edit import edit_preferences
 from persistence.db_read import see_people, see_drinks, see_all_preferences
 from persistence.db_write import add_people, add_drinks, create_order
 
 while True: 
-    start_up()
     main_menu()
     selection = int(input("\n Please enter your selection here:  "))
     
@@ -23,7 +23,7 @@ while True:
     elif selection == 2:
         see_drinks()
         choice_2 = input ("Would you like to add to this list? Y or N \n")
-        if choice_2 == "Y" or choice == "y":
+        if choice_2 == "Y" or choice_2 == "y":
             add_drinks()
             input ("Press ENTER to return to the main menu")
             clear_screen()
@@ -45,5 +45,11 @@ while True:
         clear_screen()
         main_menu()
     
+    elif selection == 6:
+        edit_preferences ()
+        input ("Press ENTER to return to the main menu")
+        clear_screen()
+        main_menu()
+        
     else:
         exit()

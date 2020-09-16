@@ -16,6 +16,7 @@ def see_people ():
         
     cursor.close
     connection.close
+    return ("Yes")
 
 def see_drinks():
     connection = pymysql.connect("localhost", "root", "Chenyse2017!", "miniproject")
@@ -42,3 +43,5 @@ def see_all_preferences():
         
     cursor.close
     connection.close
+
+see_all_preferences()

@@ -14,8 +14,9 @@ def main_menu():
     [3] Order a Round of Drinks
     [4] View Orders & Receipt
     [5] View Preferences
-    [6] Save & Exit"""
-    print(menu_text)
+    [6] Edit Preferences
+    [7] Save & Exit"""
+    print (menu_text)
 
 def start_up():
     get_people("person_output.csv")
