@@ -1,6 +1,3 @@
-from classes.Person import Person as Person
-person_list =[]
-
 import sys
 sys.path.insert(0,"/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages")
 
@@ -14,15 +11,11 @@ def see_people ():
     rows = cursor.fetchall()
     
     for row in rows:
-        new_person = Person(row[0], row[1], row[2])
-        person_list.append(new_person)
-        # print("\t ID Number: " + str(row[0]))
-        # print("\t Full Name: " + row[1] + " " + row[2])
-        # print("\n")
+        print("\t ID Number: " + str(row[0]))
+        print("\t Full Name: " + row[1] + " " + row[2])
+        print("\n")
     cursor.close
     connection.close
-    print(person_list)
-
 
 def see_drinks():
     connection = pymysql.connect("localhost", "root", "Chenyse2017!", "miniproject")
@@ -49,5 +42,3 @@ def see_all_preferences():
         
     cursor.close
     connection.close
-
-see_people()

@@ -1,7 +1,8 @@
-from functions.menu import main_menu, start_up, clear_screen
+from functions.menu import main_menu, clear_screen
 from persistence.db_edit import edit_preferences
 from persistence.db_read import see_people, see_drinks, see_all_preferences
 from persistence.db_write import add_people, add_drinks, create_order
+from persistence.db_create import create_receipt
 
 while True: 
     main_menu()
@@ -34,7 +35,19 @@ while True:
             main_menu()
             
     elif selection ==3:
-        create_order()
+        choice_3 = int(input("Are you ordering for yourself (1) or for the group (2)? Enter:   "))
+        if choice_3 == 1:
+            create_order()
+            input ("Press ENTER to return to the main menu")
+            clear_screen()
+            main_menu()
+        elif choice_3 == 2:
+            print("Group Order Functionality Pending")
+        else:
+            print("Invalid choice entered. Returning to Main Menu")
+    
+    elif selection == 4:
+        create_receipt()
         input ("Press ENTER to return to the main menu")
         clear_screen()
         main_menu()
