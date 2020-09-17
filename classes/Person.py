@@ -6,4 +6,4 @@ class Person:
 
     
     def __repr__(self):
-        return (f"ID: {self.uid} Name:{self.first_name} {self.surname})
+        return (f"ID: {self.uid} Name:{self.first_name} {self.surname}")
