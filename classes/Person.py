@@ -1,8 +1,9 @@
 class Person:
-    def __init__ (self, name, age, gender):
-        self.name=name
-        self.age=age
-        self.gender=gender
+    def __init__ (self, uid, first_name, surname):
+        self.uid=uid
+        self.first_name=first_name
+        self.surname=surname
+
     
     def __repr__(self):
-        return (f"Name:{self.name}, Age:{self.age}, Gender:{self.gender}")
+        return (f"ID: {self.uid} Name:{self.first_name} {self.surname})
