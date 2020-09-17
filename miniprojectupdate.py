@@ -2,7 +2,7 @@ from functions.menu import main_menu, clear_screen
 from persistence.db_edit import edit_preferences
 from persistence.db_read import see_people, see_drinks, see_all_preferences
 from persistence.db_write import add_people, add_drinks, create_order
-from persistence.db_create import create_receipt
+from persistence.db_create import create_receipt, create_round
 
 while True: 
     main_menu()
@@ -42,7 +42,10 @@ while True:
             clear_screen()
             main_menu()
         elif choice_3 == 2:
-            print("Group Order Functionality Pending")
+            create_round()
+            input ("Press ENTER to return to the main menu")
+            clear_screen()
+            main_menu()
         else:
             print("Invalid choice entered. Returning to Main Menu")
     
@@ -51,18 +54,28 @@ while True:
         input ("Press ENTER to return to the main menu")
         clear_screen()
         main_menu()
-        
+    
     elif selection ==5:
+        #Create Receipt for Rounds
+        
         see_all_preferences()
         input ("Press ENTER to return to the main menu")
         clear_screen()
         main_menu()
     
     elif selection == 6:
-        edit_preferences ()
-        input ("Press ENTER to return to the main menu")
-        clear_screen()
-        main_menu()
-        
+        see_all_preferences()
+        edit= input("Would you like to edit any of these preferences? Y or N:   ")
+        if edit == "Y" or edit == "y":
+            edit_preferences ()
+            input ("Press ENTER to return to the main menu")
+            clear_screen()
+            main_menu()
+        else:
+            input ("Press ENTER to return to the main menu")
+            clear_screen()
+            main_menu()  
+    
+    
     else:
         exit()
