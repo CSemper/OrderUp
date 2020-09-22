@@ -3,14 +3,14 @@ from classes.Drink import Drink as Drink
 from classes.Preference import Preference as Preference
 from classes.Order import Order as Order
 
-def test_AddPerson():
-    test_person = Person ("Chenyse", 25, "female")
-    expected_person_name = "Chenyse"
-    expected_person_age = 25
-    expected_person_gender = "female"
-    assert test_person.name == expected_person_name
-    assert test_person.age == expected_person_age
-    assert test_person.gender== expected_person_gender
+# def test_AddPerson():
+#     test_person = Person("Chenyse", 25, "female")
+#     expected_person_name = "Chenyse"
+#     expected_person_age = 25
+#     expected_person_gender = "female"
+#     assert test_person.name == expected_person_name
+#     assert test_person.age == expected_person_age
+#     assert test_person.gender== expected_person_gender
     
 def test_AddDrinks():
     test_add_drinks = Drink("lemonade", "cold")

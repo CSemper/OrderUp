@@ -1,5 +1,6 @@
-import sys
-sys.path.insert(0,"/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages")
+from functions.menu import clear_screen
+# import sys
+# sys.path.insert(0,"/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages")
 import pymysql
 
 
@@ -62,6 +63,7 @@ def create_order():
     for row in rows:
         print("\t " + str(row[0]) + ":  " + row[1])
     person = int(input("Please Enter the Unique ID of the person making the order:   "))
+    clear_screen()
     age_check = f"SELECT age FROM people WHERE person_id = {person}"
     cursor.execute(age_check) 
     get_age = cursor.fetchone()
@@ -88,9 +90,12 @@ def create_order():
     sql = "INSERT INTO orders (date, person_id, drink1, drink2, drink3, drink4) VALUES (now(), %s, %s, %s, %s, %s)"
     cursor.execute(sql, (person, choice_1, choice_2, choice_3, choice_4))
     connection.commit()
-    print("Order Recorded")
+    clear_screen()
+    print("Order Recorded Successfully!")
     last_order = cursor.lastrowid
+    print("=============================================================")
     print (f"Please make note of your unique order number:  {last_order}")
+    print("=============================================================")
     
     cursor.close
     connection.close

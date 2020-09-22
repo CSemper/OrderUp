@@ -1,4 +1,5 @@
 import pymysql
+from functions.menu import clear_screen
 
 def sum_list(l):
     sum = 0
@@ -90,13 +91,22 @@ def create_round():
                 adl= cursor.fetchall()
                 for entry in adl:
                     print ("\t" + str(entry[0]) + ": " + entry[1] + " @ £" + str(entry[2]))
-            
-            alternate= int(input("Please select your chosen drink for this order from above list:   "))
-            sql = "INSERT INTO rounds (date, round_id, person, drink_id) VALUES (now(), %s, %s, %s)"
-            cursor.execute(sql, (round_id, person_name, alternate))
-            connection.commit()
-            
-            print(f"Round {round_id} Complete")
+
+            while True:
+                try:
+                    alternate= int(input("Please select your chosen drink for this order from above list:   "))
+                    sql = "INSERT INTO rounds (date, round_id, person, drink_id) VALUES (now(), %s, %s, %s)"
+                    cursor.execute(sql, (round_id, person_name, alternate))
+                    connection.commit()
+                    break
+                except pymysql.err.IntegrityError:
+                    print("That ID is not recognized. Please Try again:")
+                
+    clear_screen()
+    print(f"Round Ordered Successfully!")
+    print("========================================================")
+    print (f"Please make note of your Unique Round ID:  {round_id}")
+    print("========================================================")
 
 def round_receipt():
     drink_list=[]
@@ -109,10 +119,10 @@ def round_receipt():
     print(f"Order ID: {unique_id}")
     print("=============================================")
     print("Drinks Ordered: \n")
-    
     info=(f"SELECT d.drink_name, d.price FROM rounds as r LEFT JOIN drinks as d ON r.drink_id = d.drink_id WHERE r.round_id={unique_id}")
     cursor.execute(info)
     rows = cursor.fetchall()
+        
     for row in rows:
         drink_name= (row[0])
         drink_price=(row[1])
