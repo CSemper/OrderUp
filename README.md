@@ -15,11 +15,12 @@ Language: Python, MySQL || Testing: Pytest, Unittest framework || Other Framewor
 <br/> 
 <br/> 
 
-<img align = "left" img src="https://user-images.githubusercontent.com/70574102/98035964-2ccf6a00-1e11-11eb-80f4-20e3eb1ca56d.png" width="400">
+<img align = "left" img src="https://user-images.githubusercontent.com/70574102/98035964-2ccf6a00-1e11-11eb-80f4-20e3eb1ca56d.png" width="400" height ="300">
 
 ### Project Prezi Presentation:
 
 Want an insight into my reflections? Maybe you're interested in what I learned? Or even how I think this could have been improved! Feel free to [Check Out My Presentation Here!](https://prezi.com/p/edit/wwzm0xyylhfx/)
+
 <br/> 
 
 ### Snapshots & Outputs:
