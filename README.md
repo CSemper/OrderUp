@@ -14,7 +14,6 @@ Language: Python, MySQL || Testing: Pytest, Unittest framework || Other Framewor
 
 <br/> 
 
-
 <img align = "left" img src="https://user-images.githubusercontent.com/70574102/98035964-2ccf6a00-1e11-11eb-80f4-20e3eb1ca56d.png" width="400">
 
 ### Project Prezi Presentation:
