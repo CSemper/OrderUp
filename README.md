@@ -21,7 +21,6 @@ Language: Python, MySQL || Testing: Pytest, Unittest framework || Other Framewor
 
 Want an insight into my reflections? Maybe you're interested in what I learned? Or even how I think this could have been improved! Feel free to [Check Out My Presentation Here!](https://prezi.com/p/edit/wwzm0xyylhfx/)
 
-<br/> 
 
 ### Snapshots & Outputs:
 
