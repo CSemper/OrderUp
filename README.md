@@ -7,11 +7,12 @@ Order Up! is a CLI Application that was created as a mini-project for ordering d
 Although simple, the project features a basic ETL pipeline where data is extracted, transformed, and loaded.
 
 This project was undertaken as a part of the Generation Data Engineering Program.
-<br/> 
+
 
 ### Technologies: 
 Language: Python, MySQL || Testing: Pytest, Unittest framework || Other Frameworks: DBeaver, Jupyter Notebooks
 
+<br/> 
 <br/> 
 
 <img align = "left" img src="https://user-images.githubusercontent.com/70574102/98035964-2ccf6a00-1e11-11eb-80f4-20e3eb1ca56d.png" width="400">
