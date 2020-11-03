@@ -25,4 +25,4 @@ Want an insight into my reflections? Maybe you're interested in what I learned? 
 
 ### Snapshots & Outputs:
 
-The demo video is "OrderUpMovie.mp4" in this repository. However, feel free to [Check Out The Demo Here!](https://youtu.be/u20lr1NblYQ)
+The demo video is "OrderUpMovie.mp4" in this repository. However, feel free to [Check It Out Here!](https://youtu.be/u20lr1NblYQ)
