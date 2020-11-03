@@ -3,3 +3,7 @@ SHOW
 USE
 pyvenv.cfg
 .coverage
+.vscode
+_pycache_
+bin/
+lib/
